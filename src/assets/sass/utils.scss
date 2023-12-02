@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "roboto-regular";
+  src: url("../fonts/Roboto-Regular.ttf");
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "roboto-regular";
+}
+
+$containers: (
+  "sidebar": 0px,
+);
+
+@each $container, $containerHeight in $containers {
+  .max-allowed-container--#{$container} {
+    min-height: calc(100vh - #{$containerHeight});
+    height: calc(100vh - #{$containerHeight});
+    max-height: calc(100vh - #{$containerHeight});
+  }
+}
+
+$fontSizes: (
+  "x-small": 4,
+  //xtra small
+  "smaller": 6,
+  "small": 7.5,
+  //small
+  "small-med": 9,
+  //small-medium
+  "medium": 10,
+  //medium
+  "medium-reg": 11.5,
+  //medium-regular
+  "regular": 13,
+  //regular
+  "reg-large": 16,
+  //regular-large
+  "large": 20,
+  //large
+  "huge": 24,
+  //huge
+);
+/**
+    m ( medium ) is the global font size
+    when changing the medium font size value, change the font size of body tag in main.scss
+*/
+@each $fontSizeName, $fontSizeVal in $fontSizes {
+  .font-#{$fontSizeName} {
+    font-size: #{$fontSizeVal}pt;
+  }
+}
+$radiusValues: 0, 1, 2, 3, 4, 5, 10, 15;
+@each $radiusSize in $radiusValues {
+  .radius-#{$radiusSize} {
+    border-radius: #{$radiusSize}px;
+  }
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.free-letter-spacing {
+  letter-spacing: 1px;
+}
+.extra-letter-spacing {
+  letter-spacing: 2px;
+}
+.pointer-cursor {
+  cursor: pointer;
+}
+.text-bold {
+  font-weight: bold;
+}
+.hover-text-bold {
+  &:hover {
+    font-weight: bold;
+  }
+}
+.ellipsis-word {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

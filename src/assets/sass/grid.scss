@@ -1,0 +1,73 @@
+.flex-row {
+  display: flex;
+  width: 100%;
+  min-width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  /*Possible flex vertical alignment sides*/
+  $alignTypes: (
+    "start": "flex-start",
+    "center": "center",
+    "end": "flex-end",
+    "stretch": "stretch",
+    "baseline": "baseline",
+  );
+  /*Possible flex horizontal alignment sides*/
+  $justifyTypes: (
+    "start": "flex-start",
+    "center": "center",
+    "end": "flex-end",
+    "between": "space-between",
+    "around": "space-around",
+    "even": "space-evenly",
+  );
+  /*Different screen breakpoints*/
+  $breakpoints: (
+    "-xs": (
+      "max-width:480px",
+    ),
+    "-sm": (
+      "min-width:480px) and (max-width:720px",
+    ),
+    "-md": (
+      "min-width:720px) and (max-width:1080px",
+    ),
+    "-lg": (
+      "min-width:1080px) and (max-width:1440px",
+    ),
+    "-xl": (
+      "min-width:1440px",
+    ),
+  );
+  @each $alignType, $alignVal in $alignTypes {
+    &.align-#{$alignType} {
+      align-items: #{$alignVal};
+    }
+  }
+
+  @each $justifyType, $justifyVal in $justifyTypes {
+    &.justify-#{$justifyType} {
+      justify-content: #{$justifyVal};
+    }
+  }
+
+  @each $screenName, $widths in $breakpoints {
+    @media screen and (#{$widths}) {
+      @for $colSpan from 0 through 12 {
+        .col#{$screenName}-#{$colSpan} {
+          min-width: calc((100% / 12) * #{$colSpan});
+          width: calc((100% / 12) * #{$colSpan});
+          max-width: calc((100% / 12) * #{$colSpan});
+        }
+        .col-#{$colSpan} {
+          min-width: calc((100% / 12) * #{$colSpan});
+          width: calc((100% / 12) * #{$colSpan});
+          max-width: calc((100% / 12) * #{$colSpan});
+        }
+      }
+    }
+  }
+}

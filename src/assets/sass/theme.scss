@@ -1,0 +1,61 @@
+@import "./variables";
+
+@each $colorName, $colorVal in $colors {
+  .text-#{$colorName} {
+    color: $colorVal;
+  }
+  .hover-text-#{$colorName} {
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: $colorVal;
+    }
+  }
+  .bg-#{$colorName} {
+    background-color: $colorVal;
+  }
+  .bg-#{$colorName}-layer {
+    background-color: rgba($colorVal, 0.1);
+  }
+  .hover-bg-#{$colorName} {
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      background-color: $colorVal;
+    }
+  }
+  .border-#{$colorName} {
+    border: 1px solid $colorVal;
+  }
+  .hover-border-#{$colorName} {
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border: 1px solid $colorVal;
+    }
+  }
+  .bt-#{$colorName} {
+    border-top: 1px solid $colorVal;
+  }
+  .bl-#{$colorName} {
+    border-left: 1px solid $colorVal;
+  }
+  .br-#{$colorName} {
+    border-right: 1px solid $colorVal;
+  }
+  .bb-#{$colorName} {
+    border-bottom: 1px solid $colorVal;
+  }
+  .bb-2-#{$colorName} {
+    border-bottom: 2px solid $colorVal;
+  }
+  .hover-bb-#{$colorName} {
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border-bottom: 1px solid $colorVal;
+    }
+  }
+}
+.hover-border-none {
+  &:hover {
+    border-color: transparent;
+  }
+}

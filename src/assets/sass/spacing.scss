@@ -1,0 +1,52 @@
+$spacingValues: auto, 2, 3, 4, 5, 6, 7, 8, 10, 15, 20, 25, 30, 50, 60;
+@each $spacingVal in $spacingValues {
+  .p-#{$spacingVal} {
+    padding: #{$spacingVal}px;
+  }
+  .pt-#{$spacingVal} {
+    padding-top: #{$spacingVal}px;
+  }
+  .pr-#{$spacingVal} {
+    padding-right: #{$spacingVal}px;
+  }
+  .pb-#{$spacingVal} {
+    padding-bottom: #{$spacingVal}px;
+  }
+  .pl-#{$spacingVal} {
+    padding-left: #{$spacingVal}px;
+  }
+  .pv-#{$spacingVal} {
+    padding-top: #{$spacingVal}px;
+    padding-bottom: #{$spacingVal}px;
+  }
+  .ph-#{$spacingVal} {
+    padding-left: #{$spacingVal}px;
+    padding-right: #{$spacingVal}px;
+  }
+  .m-#{$spacingVal} {
+    margin: #{$spacingVal}px;
+  }
+  .mt-#{$spacingVal} {
+    margin-top: #{$spacingVal}px;
+  }
+  .mt--#{$spacingVal} {
+    margin-top: #{$spacingVal}px;
+  }
+  .pr-#{$spacingVal} {
+    margin-right: #{$spacingVal}px;
+  }
+  .mb-#{$spacingVal} {
+    margin-bottom: #{$spacingVal}px;
+  }
+  .ml-#{$spacingVal} {
+    margin-left: #{$spacingVal}px;
+  }
+  .mv-#{$spacingVal} {
+    margin-top: #{$spacingVal}px;
+    margin-bottom: #{$spacingVal}px;
+  }
+  .mh-#{$spacingVal} {
+    margin-left: #{$spacingVal}px;
+    margin-right: #{$spacingVal}px;
+  }
+}
